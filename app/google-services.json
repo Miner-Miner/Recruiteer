@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765080045465",
+    "project_id": "recruiteer-5e913",
+    "storage_bucket": "recruiteer-5e913.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765080045465:android:a9830676af2b3b4455f508",
+        "android_client_info": {
+          "package_name": "com.miner.recruiteer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765080045465-g44nr5tok1ced65v5917bil2r2jo1qlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMPGJ92wdsBbqQgyh3emkn6j9VqU-8uO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765080045465-g44nr5tok1ced65v5917bil2r2jo1qlh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

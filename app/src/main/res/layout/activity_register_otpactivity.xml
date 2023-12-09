@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterOTPActivity">
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnOtp"
+        app:viewType="rectangle"
+        app:itemSpacing="20dp"
+        app:itemWidth="50dp"
+        app:itemHeight="50dp"
+        app:itemCount="4"
+        app:itemRadius="25dp"
+        android:cursorVisible="true"
+        app:hideLineWhenFilled="true"
+        android:inputType="number"
+        android:textStyle="normal"
+        android:textSize="20dp"
+        style="@style/PinWidget.PinView"/>
+    <TextView
+        android:id="@+id/tvOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If OTP not recieve "
+        android:textSize="20dp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/pinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinView"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvOtpRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click here"
+        android:textSize="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toEndOf="@+id/tvOtp"
+        app:layout_constraintTop_toTopOf="@id/tvOtp"
+        app:layout_constraintBottom_toBottomOf="@id/tvOtp"/>
+
+    <Button
+        android:id="@+id/btnOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Confirm"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="60dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

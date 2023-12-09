@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Recruiteer</string>
+    <string-array name="tag">
+        <item></item>
+        <item>IT</item>
+        <item>Electrical</item>
+        <item>Mech</item>
+        <item>Civil</item>
+        <item>Electronic</item>
+        <item>Manager</item>
+        <item>Service</item>
+        <item>Sale</item>
+    </string-array>
+</resources>
