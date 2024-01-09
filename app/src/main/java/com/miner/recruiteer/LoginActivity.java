@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //startActivity(new Intent(this,RegisterOTPActivity.class));
+        //startActivity(new Intent(this,HomoeActivity.class));
         InitializeView();
         OnButtonClick();
     }

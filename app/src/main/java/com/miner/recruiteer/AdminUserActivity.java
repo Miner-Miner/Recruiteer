@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
 import com.miner.recruiteer.Adapter.ProfileAdapter;
 import com.miner.recruiteer.Adapter.ProfileClickListener;
+import com.miner.recruiteer.Class.LogIn;
 import com.miner.recruiteer.Class.Profile;
 
 import java.util.ArrayList;
@@ -132,18 +134,23 @@ public class AdminUserActivity extends AppCompatActivity implements ProfileClick
                         db.collection(user).document(profile.getId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(AdminUserActivity.this, "Successfully deleted account.", Toast.LENGTH_SHORT).show();
+                                reference.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                                    @Override
+                                    public void onSuccess(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot ds: dataSnapshot.getChildren()){
+                                            if(ds.getValue(LogIn.class).getEmail().equals(profile.getEmail())){
+                                                reference.child(user).child(ds.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        Toast.makeText(AdminUserActivity.this, "Successfully deleted account.", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
+                                            }
+                                        }
+                                    }
+                                });
                             }
                         });
-                        //remove data from rldb
-                        /*
-                        reference.removeValue(new DatabaseReference.CompletionListener() {
-                            @Override
-                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-
-                            }
-                        });
-                        */
                         profileArrayList.clear();
                         FetchData(spinnerUser.getSelectedItem().toString());
                         rvUsers.setAdapter(profileAdapter);

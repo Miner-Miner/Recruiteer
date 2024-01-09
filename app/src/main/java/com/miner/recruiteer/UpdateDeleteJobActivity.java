@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -38,6 +40,7 @@ public class UpdateDeleteJobActivity extends AppCompatActivity implements ItemCl
     ArrayList<JobPost> jobPostsArrayList;
     JobPostAdapter jobPostAdapter;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    DatabaseReference rldb = FirebaseDatabase.getInstance().getReference();
     String email;
 
     LinearLayout row2Update,row3Update,row4Update,row5Update;
